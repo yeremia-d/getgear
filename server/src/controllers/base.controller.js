@@ -48,7 +48,7 @@ class Controller {
         'details': 'Query made',
         'data': {
           'meta': {
-            'numRecordsReturned': queryLimit,
+            'numRecordsReturned': data.length,
             'numTotalRecords': numTotalRecords,
             'recordsFrom': ((queryPage * queryLimit) - queryLimit) + 1,
             'recordsTo': queryPage * queryLimit,
