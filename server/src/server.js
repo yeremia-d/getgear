@@ -30,7 +30,7 @@ app.use(cors());
 app.use(morgan('combined'));
 
 // use signout routes
-app.use('/signouts', router);
+app.use(router);
 
 // server to listen on preset port
 app.listen(process.env.API_PORT, () => {

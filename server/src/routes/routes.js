@@ -18,49 +18,39 @@ const signouts = new SignoutController(SignoutModel);
 
 // ========================== Routes for signouts ========================== //
 
-// Accepts query string of with fields: 'page', 'limit', 'orderby' and 'order'
-router
-    .route(`/${process.env.API_SIGNOUTS_ENDPOINT}`)
-    .get(signouts.getMany);
+// Gets a number of signouts
+// Accepts query string of with fields: 'page' and 'limit'
+router.route('/signouts').get(signouts.getMany);
 
-router
-    .route(`/${process.env.API_SIGNOUTS_ENDPOINT}/:id`)
-    .get(signouts.getOne);
+// Gets a single record with id
+router.route('/signouts/:id').get(signouts.getOne);
 
-router
-    .route(`/${process.env.API_SIGNOUTS_ENDPOINT}`)
-    .post(signouts.create);
+// Creates a new signout
+router.route('/signouts').post(signouts.create);
 
-router
-    .route(`/${process.env.API_SIGNOUTS_ENDPOINT}:id`)
-    .put(signouts.update);
+// Updates a signout with id
+router.route('/signouts/:id').put(signouts.update);
 
-router
-    .route(`/${process.env.API_SIGNOUTS_ENDPOINT}:id`)
-    .delete(signouts.delete);
+// Deletes a signout with id
+router.route('/signouts/:id').delete(signouts.delete);
 
 // ======================== Routes for catalog items ======================== //
 
-// Accepts query string of with fields: 'page', 'limit', 'orderby' and 'order'
-router
-    .route(`/${process.env.API_CATALOG_ENDPOINT}`)
-    .get(catalog.getMany);
+// Gets a number of catalog items
+// Accepts query string of with fields: 'page' and 'limit'
+router.route('/catalog').get(catalog.getMany);
 
-router
-    .route(`/${process.env.API_CATALOG_ENDPOINT}/:id`)
-    .get(catalog.getOne);
+// Gets a single catalog item with id
+router.route('/catalog/:id').get(catalog.getOne);
 
-router
-    .route(`/${process.env.API_CATALOG_ENDPOINT}`)
-    .post(catalog.create);
+// Creates a new catalog item
+router.route('/catalog').post(catalog.create);
 
-router
-    .route(`/${process.env.API_CATALOG_ENDPOINT}/:id`)
-    .put(catalog.update);
+// Updates a catalog item
+router.route('/catalog/:id').put(catalog.update);
 
-router
-    .route(`/${process.env.API_CATALOG_ENDPOINT}/:id`)
-    .delete(catalog.delete);
+// Deletes a catalog item
+router.route('catalog/:id').delete(catalog.delete);
 
 
 export default router;
