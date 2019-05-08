@@ -50,8 +50,8 @@ class Controller {
           'meta': {
             'numRecordsReturned': data.length,
             'numTotalRecords': numTotalRecords,
-            'recordsFrom': ((queryPage * queryLimit) - queryLimit) + 1,
-            'recordsTo': queryPage * queryLimit,
+            'recordsFrom': data.length == 0 ? 0 : ((queryPage * queryLimit) - queryLimit) + 1,
+            'recordsTo': data.length == 0 ? 0 : queryPage * queryLimit,
           },
           'items': data,
         },
