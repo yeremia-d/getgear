@@ -12,13 +12,13 @@ import dotenv from 'dotenv';
 import router from './routes/routes';
 
 // import database connection utility
-// import dbConnect from './utils/db.utils';
+import dbConnect from './utils/db.utils';
 
 // dotenv initialization
 dotenv.config();
 
 // Connect to the database
-// dbConnect();
+dbConnect();
 
 // initialize express
 const app = express();
