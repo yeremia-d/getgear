@@ -1,11 +1,12 @@
 import React from 'react';
 
 import {BrowserRouter as Router, Route} from 'react-router-dom';
+import AppFrame from './components/AppFrame/AppFrame';
 
-function App() {
+const App = () => {
   return (
-   <div></div>
+    <AppFrame />
   );
-}
+};
 
 export default App;
