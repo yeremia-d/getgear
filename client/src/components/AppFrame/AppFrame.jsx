@@ -7,7 +7,7 @@ const AppFrameStylesDesktop = {
 const AppFrame = (props) => {
   return (
     <div>
-      <>
+      test
     </div>
   );
 };
