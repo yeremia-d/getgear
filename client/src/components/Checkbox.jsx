@@ -1,4 +1,7 @@
 import React from 'react';
+import styled from 'styled-components';
+
+const StyledCheckbox = styled.div``;
 
 /**
  * Checkbox functional component
@@ -12,7 +15,11 @@ import React from 'react';
  * @return {JSX}
  */
 const Checkbox = (props) => {
-  return (<div></div>);
+  return (
+    <StyledCheckbox>
+      <label>{props.text}</label>
+    </StyledCheckbox>
+  );
 };
 
 export default Checkbox;

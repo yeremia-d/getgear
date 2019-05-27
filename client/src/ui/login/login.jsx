@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import Button from '../../components/Buttons';
 
 /**
  * Login screen component
@@ -22,6 +23,7 @@ class LoginUI extends Component {
     return (
       <div>
         Login Component
+        <Button text="Hi"/>
       </div>
     );
   }
