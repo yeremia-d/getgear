@@ -3,11 +3,10 @@ import React, {Component} from 'react';
 /**
  * Login screen component
  * Checkes if user is logged in:
- * If user is logged in, show UI that gives an 
+ * If user is logged in, show UI that gives an
  * option of signing out or manage gear
  */
 class LoginUI extends Component {
-
   /**
    * Constructs the login screen
    */
@@ -17,7 +16,7 @@ class LoginUI extends Component {
 
   /**
   * Render function for the login component.
-  * @return JSX
+  * @return {JSX}
   */
   render() {
     return (
@@ -26,7 +25,6 @@ class LoginUI extends Component {
       </div>
     );
   }
-
-}
+};
 
 export default LoginUI;

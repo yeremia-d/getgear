@@ -1,14 +1,4 @@
 /**
- * Common colors
- */
-const colors = {
-  primary: 'FFFFFF',
-  secondary: 'FFFFFF',
-  accent: 'FFFFFF',
-
-};
-
-/**
  * Standard Screen Sizes
  */
 const screenSizes = {
@@ -20,7 +10,7 @@ const screenSizes = {
 /**
  * media templates for styled components
  */
-const mediaQuery = Object.keys(screenSizes).reduce((acc, label) => {
+const Media = Object.keys(screenSizes).reduce((acc, label) => {
   acc[label] = (...args) => css`
     @media only screen and (max-width: ${screenSizes[label] / 16}em) {
       ${css(...args)}
@@ -29,4 +19,4 @@ const mediaQuery = Object.keys(screenSizes).reduce((acc, label) => {
   return acc;
 }, {});
 
-export {screenSizes, colors, mediaQuery};
+export default Media;
