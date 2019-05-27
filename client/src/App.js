@@ -2,9 +2,9 @@ import React from 'react';
 
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 
-import LoginUI from './components/login/login';
-import ManageGearUI from './components/manageGear/manageGear';
-import SignoutsUI from './components/signouts/signouts';
+import LoginUI from './ui/login/login';
+import ManageGearUI from './ui/manageGear/manageGear';
+import SignoutsUI from './ui/signouts/signouts';
 
 const App = () => {
   return (
