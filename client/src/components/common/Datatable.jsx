@@ -1,9 +1,33 @@
 import React from 'react';
+import styled from 'styled-components';
 
-const TableRow = (props) => {};
+const StyledDataTable = styled.div``;
 
-const TableHeader = (props) => {};
+const StyledTableHeader = styled.div``;
 
-const dataTable = (props) => {};
+const StyledTableRow = styled.div``;
+
+const TableHeader = (props) => {
+  return (
+    <StyledTableHeader>
+    </StyledTableHeader>
+  );
+};
+
+const TableRows = (props) => {
+  return (
+    <StyledTableRow>
+    </StyledTableRow>
+  );
+};
+
+const dataTable = (props) => {
+  return (
+    <StyledDataTable>
+      <TableHeader />
+      <TableRows />
+    </StyledDataTable>
+  );
+};
 
 export default dataTable;

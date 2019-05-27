@@ -1,6 +1,8 @@
 import React from 'react';
 
-const TextField = (props) => {};
+const TextField = (props) => {
+  return (<div></div>);
+};
 
 const NumberField = (props) => {};
 
