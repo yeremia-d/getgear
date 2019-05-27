@@ -1,3 +1,5 @@
+import {css} from 'styled-components';
+
 /**
  * Standard Screen Sizes
  */
@@ -10,7 +12,7 @@ const screenSizes = {
 /**
  * media templates for styled components
  */
-const Media = Object.keys(screenSizes).reduce((acc, label) => {
+const MediaQuery = Object.keys(screenSizes).reduce((acc, label) => {
   acc[label] = (...args) => css`
     @media only screen and (max-width: ${screenSizes[label] / 16}em) {
       ${css(...args)}
@@ -19,4 +21,4 @@ const Media = Object.keys(screenSizes).reduce((acc, label) => {
   return acc;
 }, {});
 
-export default Media;
+export default MediaQuery;
