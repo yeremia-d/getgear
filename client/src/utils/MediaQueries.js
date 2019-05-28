@@ -4,9 +4,10 @@ import {css} from 'styled-components';
  * Standard Screen Sizes
  */
 const screenSizes = {
-  desktop: 992,
-  tablet: 768,
-  mobile: 576,
+  xl: 1200,
+  lg: 992,
+  md: 768,
+  sm: 576,
 };
 
 /**
@@ -14,7 +15,7 @@ const screenSizes = {
  */
 const MediaQuery = Object.keys(screenSizes).reduce((acc, label) => {
   acc[label] = (...args) => css`
-    @media only screen and (max-width: ${screenSizes[label] / 16}em) {
+    @media only screen and (min-width: ${screenSizes[label] / 16}em) {
       ${css(...args)}
     }`;
 

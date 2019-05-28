@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Button from '../../components/Buttons';
+import Checkbox from '../../components/Checkbox';
 
 /**
  * Login screen component
@@ -23,7 +24,9 @@ class LoginUI extends Component {
     return (
       <div>
         Login Component
-        <Button text="Hi"/>
+        <Button onClick={()=>alert()}>Hi</Button>
+        <Button>There</Button>
+        <Checkbox>Hi</Checkbox>
       </div>
     );
   }

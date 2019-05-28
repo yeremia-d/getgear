@@ -1,7 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const StyledCheckbox = styled.div``;
+const StyledCheckboxContainer = styled.div``;
+const StyledCheckbox = styled.input.attrs({type: 'checkbox'})`
+
+`;
 
 /**
  * Checkbox functional component
@@ -15,10 +18,17 @@ const StyledCheckbox = styled.div``;
  * @return {JSX}
  */
 const Checkbox = (props) => {
+  const checkboxProps = {
+    checked: props.checked,
+  };
+
   return (
-    <StyledCheckbox>
-      <label>{props.text}</label>
-    </StyledCheckbox>
+    <StyledCheckboxContainer>
+      <label>
+        <StyledCheckbox {...checkboxProps} />
+        {props.children}
+      </label>
+    </StyledCheckboxContainer>
   );
 };
 

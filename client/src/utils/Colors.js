@@ -6,6 +6,9 @@ const colors = {
   secondary: '#FFFFFF',
   accent: '#FFFFFF',
   white: '#FFFFFF',
+  midgrey: '#CCCCCC',
+  darkgrey: '#555555',
+  lightgrey: '#EEEEEE',
 };
 
 export default colors;

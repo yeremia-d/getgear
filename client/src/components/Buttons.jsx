@@ -1,106 +1,37 @@
-import React from 'react';
-
+/* eslint-disable max-len */
 import styled from 'styled-components';
 import colors from '../utils/Colors';
 import MediaQuery from '../utils/MediaQueries';
+import {lighten} from 'polished';
 
-const PrimaryButton = styled.button`
-  background: ${colors.primary};
+const Button = styled.button`
+  background: ${(props) => props.secondary ? `none`:colors.primary};
   border: none;
-  color: ${colors.white};
+  color: ${(props) => props.secondary ? colors.primary:colors.white};
   display: inline-block;
   font-size: 1rem;
-  margin: 0.25rem;
+  margin: 0.1rem;
   padding: 0.5rem 1rem;
-  transition: background 0.3s ease;
+  transition: all color 0.3s ease;
+  cursor: ${(props) => props.secondary ? `pointer`: `default`};
 
   &:hover {
-    background: #FFF;
+    background: ${(props) => props.secondary ? `none`:lighten(0.05, colors.primary)};
+    color: ${(props) => props.secondary ? lighten(0.05, colors.primary):colors.white};
+    text-decoration: ${(props) => props.secondary ? `underline`:`none`};
   }
 
-  ${MediaQuery.tablet`
-    background: #FFF; 
+  &:disabled {
+    background: ${(props) => props.secondary ? `none`:colors.midgrey};
+    color: ${(props) => props.secondary ? colors.midgrey:colors.white};
+    text-decoration: none !important;
+    cursor: default !important;
+  }
+
+  ${MediaQuery.md`
+    margin: 0.15rem;
+    padding: 0.65rem 1rem;
   `}
-
-  ${MediaQuery.desktop``}
-
 `;
-
-const SecondaryButton = styled.button``;
-
-const DisabledButton = styled.button``;
-
-const IconButton = styled.button``;
-/**
- * Button Component (Functional)
- * @param {Object} props should have 4 fields:
- * type: 'empty' or 'default': a primary button,
- *       'disabled': disabled button
- *       'secondary': secondary button (no border or background)
- *       'icon': icon button (icon only if no text)
- *  text: The text of the button
- *  clickHandler: EventHandler function that handles click event
- *  icon: required if type is icon.
- *        values can be: 'empty', 'filter', 'close', 'search',
- *                       'signature', or 'delete'
- *  @return {JSX}
- */
-const Button = (props) => {
-  let returnedButton;
-  let buttonIcon;
-
-  // Check to see if icon is provided in props
-  switch (props.icon) {
-    case 'filter':
-      buttonIcon = <span></span>;
-      break;
-
-    case 'close':
-      buttonIcon = <span></span>;
-      break;
-
-    case 'search':
-      buttonIcon = <span></span>;
-      break;
-
-    case 'signature':
-      buttonIcon = <span></span>;
-      break;
-
-    case 'delete':
-      buttonIcon = <span></span>;
-
-    default: buttonIcon = '';
-  }
-
-  switch (props.type) {
-    case 'disabled':
-      returnedButton =
-        <DisabledButton onClick={props.clickHandler}>
-          {buttonIcon}{props.text}
-        </DisabledButton>;
-      break;
-
-    case 'secondary':
-      returnedButton =
-        <SecondaryButton onClick={props.clickHandler}>
-          {buttonIcon}{props.text}
-        </SecondaryButton>;
-
-    case 'icon':
-      returnedButton =
-        <IconButton onClick={props.clickHandler}>
-          {buttonIcon}{props.text}
-        </IconButton>;
-      break;
-
-    default: returnedButton =
-      <PrimaryButton onClick={props.clickHandler}>
-        {buttonIcon}{props.text}
-      </PrimaryButton>;
-  }
-
-  return returnedButton;
-};
 
 export default Button;
